@@ -1,0 +1,14 @@
+{
+  "name": "bo-mock-server",
+  "version": "1.0.0",
+  "description": "Mock Server for BO api",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "pm2-runtime start ecosystem.config.js"
+  },
+  "dependencies": {
+    "@mockoon/cli": "^8.4.0",
+    "pm2": "^5.2.0"
+  }
+}

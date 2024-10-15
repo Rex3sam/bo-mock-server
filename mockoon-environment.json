@@ -1,0 +1,119 @@
+{
+    "uuid": "763f8eff-492c-4e77-b0b0-0273c35b1082",
+    "lastMigration": 32,
+    "name": "Bo mock",
+    "endpointPrefix": "",
+    "latency": 0,
+    "port": 3001,
+    "hostname": "",
+    "folders": [],
+    "routes": [
+        {
+            "uuid": "dfd240a1-8828-4655-9876-e18ca742769a",
+            "type": "http",
+            "documentation": "Root Directory",
+            "method": "get",
+            "endpoint": "transactionms/v1/bankcodepay",
+            "responses": [
+                {
+                    "uuid": "fbaf1034-a726-486f-ae16-3b97076834e8",
+                    "body": "{\n    \"status\": \"OK\",\n    \"code\": 200,\n    \"data\": [\n        {\n            \"bankcode\": \"vcb\",\n            \"name\": \"Vietcombank\",\n            \"status\": 1,\n            \"notification\": \"\"\n        },\n        {\n            \"bankcode\": \"vtb\",\n            \"name\": \"Vietinbank\",\n            \"status\": 1,\n            \"notification\": \"Vietinbank sao kê từ 22h30 đến 3h\"\n        },\n        {\n            \"bankcode\": \"acb\",\n            \"name\": \"ACB\",\n            \"status\": 1,\n            \"notification\": \"\"\n        },\n        {\n            \"bankcode\": \"sab\",\n            \"name\": \"Sacombank\",\n            \"status\": 1,\n            \"notification\": \"Sacombank sao kê từ 19h30 đến 3h00\"\n        },\n        {\n            \"bankcode\": \"bidv\",\n            \"name\": \"BIDV\",\n            \"status\": 1,\n            \"notification\": \"\"\n        },\n        {\n            \"bankcode\": \"eab\",\n            \"name\": \"Đông Á\",\n            \"status\": 1,\n            \"notification\": \"\"\n        },\n        {\n            \"bankcode\": \"tcb\",\n            \"name\": \"Techcombank\",\n            \"status\": 1,\n            \"notification\": \"\"\n        },\n        {\n            \"bankcode\": \"vccb\",\n            \"name\": \"VietCapital\",\n            \"status\": 1,\n            \"notification\": \"\"\n        },\n        {\n            \"bankcode\": \"mbbank\",\n            \"name\": \"MBbank\",\n            \"status\": 1\n        },\n        {\n            \"bankcode\": \"vpbank\",\n            \"name\": \"VPbank\",\n            \"status\": 1\n        },\n        {\n            \"bankcode\": \"shb\",\n            \"name\": \"SHB\",\n            \"status\": 1\n        },\n        {\n            \"bankcode\": \"pvcb\",\n            \"name\": \"PVcombank\",\n            \"status\": 1\n        },\n        {\n            \"bankcode\": \"eib\",\n            \"name\": \"Eximbank\",\n            \"status\": 1\n        },\n        {\n            \"bankcode\": \"msb\",\n            \"name\": \"Maritimebank\",\n            \"status\": 1\n        },\n        {\n            \"bankcode\": \"nab\",\n            \"name\": \"NamABank\",\n            \"status\": 1\n        }\n    ],\n    \"message\": \"Query accounts successful.\"\n}",
+                    "latency": 500,
+                    "statusCode": 200,
+                    "label": "",
+                    "headers": [],
+                    "bodyType": "INLINE",
+                    "filePath": "",
+                    "databucketID": "",
+                    "sendFileAsBody": false,
+                    "rules": [],
+                    "rulesOperator": "OR",
+                    "disableTemplating": false,
+                    "fallbackTo404": false,
+                    "default": true,
+                    "crudKey": "id",
+                    "callbacks": []
+                },
+                {
+                    "uuid": "3dd6d675-1928-4364-885d-87a9bc32a405",
+                    "body": "{\n  \"status\": \"UNKNOWN_ERROR\",\n  \"message\": \"Đã có lỗi xảy ra\"\n}",
+                    "latency": 500,
+                    "statusCode": 500,
+                    "label": "",
+                    "headers": [],
+                    "bodyType": "INLINE",
+                    "filePath": "",
+                    "databucketID": "",
+                    "sendFileAsBody": false,
+                    "rules": [
+                        {
+                            "target": "header",
+                            "modifier": "ERROR",
+                            "value": "true",
+                            "invert": false,
+                            "operator": "equals"
+                        }
+                    ],
+                    "rulesOperator": "OR",
+                    "disableTemplating": false,
+                    "fallbackTo404": false,
+                    "default": false,
+                    "crudKey": "id",
+                    "callbacks": []
+                }
+            ],
+            "responseMode": null
+        }
+    ],
+    "rootChildren": [
+        {
+            "type": "route",
+            "uuid": "dfd240a1-8828-4655-9876-e18ca742769a"
+        }
+    ],
+    "proxyMode": false,
+    "proxyHost": "",
+    "proxyRemovePrefix": false,
+    "tlsOptions": {
+        "enabled": false,
+        "type": "CERT",
+        "pfxPath": "",
+        "certPath": "",
+        "keyPath": "",
+        "caPath": "",
+        "passphrase": ""
+    },
+    "cors": true,
+    "headers": [
+        {
+            "key": "Content-Type",
+            "value": "application/json"
+        },
+        {
+            "key": "Access-Control-Allow-Origin",
+            "value": "*"
+        },
+        {
+            "key": "Access-Control-Allow-Methods",
+            "value": "GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS"
+        },
+        {
+            "key": "Access-Control-Allow-Headers",
+            "value": "Content-Type, Origin, Accept, Authorization, Content-Length, X-Requested-With"
+        }
+    ],
+    "proxyReqHeaders": [
+        {
+            "key": "",
+            "value": ""
+        }
+    ],
+    "proxyResHeaders": [
+        {
+            "key": "",
+            "value": ""
+        }
+    ],
+    "data": [],
+    "callbacks": []
+}
