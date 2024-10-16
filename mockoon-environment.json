@@ -6,19 +6,58 @@
     "latency": 0,
     "port": 3001,
     "hostname": "",
-    "folders": [],
+    "folders": [
+        {
+            "uuid": "de41bae5-e452-4d8c-963b-b866061ad8b0",
+            "name": "TransactionMs",
+            "children": [
+                {
+                    "type": "route",
+                    "uuid": "b5b64268-c881-4930-983a-21e0e5e9e2ca"
+                },
+                {
+                    "type": "route",
+                    "uuid": "9c2a636b-13fd-4a8b-8a9b-40efe0a0fab2"
+                },
+                {
+                    "type": "route",
+                    "uuid": "d7025956-f5bf-4b6a-9837-78f5394912cb"
+                },
+                {
+                    "type": "route",
+                    "uuid": "60c70168-a745-4d47-aac9-74f8652cac0c"
+                },
+                {
+                    "type": "route",
+                    "uuid": "774e26cc-aba8-41b5-bea0-8d88de139354"
+                },
+                {
+                    "type": "route",
+                    "uuid": "ab6c3bd0-47d0-4205-b341-1aab4aff6c38"
+                },
+                {
+                    "type": "route",
+                    "uuid": "f1ba39ba-f7ed-48ca-b709-1c4971d17a3a"
+                },
+                {
+                    "type": "route",
+                    "uuid": "5251e763-9026-4e34-b912-c9bcab4e9181"
+                }
+            ]
+        }
+    ],
     "routes": [
         {
-            "uuid": "dfd240a1-8828-4655-9876-e18ca742769a",
+            "uuid": "b5b64268-c881-4930-983a-21e0e5e9e2ca",
             "type": "http",
-            "documentation": "Root Directory",
+            "documentation": "codepay-list",
             "method": "get",
             "endpoint": "transactionms/v1/bankcodepay",
             "responses": [
                 {
-                    "uuid": "fbaf1034-a726-486f-ae16-3b97076834e8",
+                    "uuid": "e2fed060-2a68-4c1b-a511-939c5effa95b",
                     "body": "{\n    \"status\": \"OK\",\n    \"code\": 200,\n    \"data\": [\n        {\n            \"bankcode\": \"vcb\",\n            \"name\": \"Vietcombank\",\n            \"status\": 1,\n            \"notification\": \"\"\n        },\n        {\n            \"bankcode\": \"vtb\",\n            \"name\": \"Vietinbank\",\n            \"status\": 1,\n            \"notification\": \"Vietinbank sao kê từ 22h30 đến 3h\"\n        },\n        {\n            \"bankcode\": \"acb\",\n            \"name\": \"ACB\",\n            \"status\": 1,\n            \"notification\": \"\"\n        },\n        {\n            \"bankcode\": \"sab\",\n            \"name\": \"Sacombank\",\n            \"status\": 1,\n            \"notification\": \"Sacombank sao kê từ 19h30 đến 3h00\"\n        },\n        {\n            \"bankcode\": \"bidv\",\n            \"name\": \"BIDV\",\n            \"status\": 1,\n            \"notification\": \"\"\n        },\n        {\n            \"bankcode\": \"eab\",\n            \"name\": \"Đông Á\",\n            \"status\": 1,\n            \"notification\": \"\"\n        },\n        {\n            \"bankcode\": \"tcb\",\n            \"name\": \"Techcombank\",\n            \"status\": 1,\n            \"notification\": \"\"\n        },\n        {\n            \"bankcode\": \"vccb\",\n            \"name\": \"VietCapital\",\n            \"status\": 1,\n            \"notification\": \"\"\n        },\n        {\n            \"bankcode\": \"mbbank\",\n            \"name\": \"MBbank\",\n            \"status\": 1\n        },\n        {\n            \"bankcode\": \"vpbank\",\n            \"name\": \"VPbank\",\n            \"status\": 1\n        },\n        {\n            \"bankcode\": \"shb\",\n            \"name\": \"SHB\",\n            \"status\": 1\n        },\n        {\n            \"bankcode\": \"pvcb\",\n            \"name\": \"PVcombank\",\n            \"status\": 1\n        },\n        {\n            \"bankcode\": \"eib\",\n            \"name\": \"Eximbank\",\n            \"status\": 1\n        },\n        {\n            \"bankcode\": \"msb\",\n            \"name\": \"Maritimebank\",\n            \"status\": 1\n        },\n        {\n            \"bankcode\": \"nab\",\n            \"name\": \"NamABank\",\n            \"status\": 1\n        }\n    ],\n    \"message\": \"Query accounts successful.\"\n}",
-                    "latency": 500,
+                    "latency": 200,
                     "statusCode": 200,
                     "label": "",
                     "headers": [],
@@ -35,9 +74,9 @@
                     "callbacks": []
                 },
                 {
-                    "uuid": "3dd6d675-1928-4364-885d-87a9bc32a405",
+                    "uuid": "2ad19599-c664-4101-b809-b0735917d2bf",
                     "body": "{\n  \"status\": \"UNKNOWN_ERROR\",\n  \"message\": \"Đã có lỗi xảy ra\"\n}",
-                    "latency": 500,
+                    "latency": 200,
                     "statusCode": 500,
                     "label": "",
                     "headers": [],
@@ -63,12 +102,539 @@
                 }
             ],
             "responseMode": null
+        },
+        {
+            "uuid": "9c2a636b-13fd-4a8b-8a9b-40efe0a0fab2",
+            "type": "http",
+            "documentation": "get paycode",
+            "method": "get",
+            "endpoint": "transactionms/v1/codepay/token",
+            "responses": [
+                {
+                    "uuid": "e439060f-b1ed-4554-811d-38469bbf5e48",
+                    "body": "{\n    \"status\": \"OK\",\n    \"code\": 200,\n    \"data\": [\n        \"R6DK10156\"\n    ],\n    \"message\": \"Query success ful\"\n}",
+                    "latency": 200,
+                    "statusCode": 200,
+                    "label": "",
+                    "headers": [],
+                    "bodyType": "INLINE",
+                    "filePath": "",
+                    "databucketID": "",
+                    "sendFileAsBody": false,
+                    "rules": [],
+                    "rulesOperator": "OR",
+                    "disableTemplating": false,
+                    "fallbackTo404": false,
+                    "default": true,
+                    "crudKey": "id",
+                    "callbacks": []
+                },
+                {
+                    "uuid": "dfddc362-4c9a-42b5-bc62-a981382889c8",
+                    "body": "{\n  \"status\": \"UNKNOWN_ERROR\",\n  \"message\": \"Đã có lỗi xảy ra\"\n}",
+                    "latency": 200,
+                    "statusCode": 500,
+                    "label": "",
+                    "headers": [],
+                    "bodyType": "INLINE",
+                    "filePath": "",
+                    "databucketID": "",
+                    "sendFileAsBody": false,
+                    "rules": [
+                        {
+                            "target": "header",
+                            "modifier": "ERROR",
+                            "value": "true",
+                            "invert": false,
+                            "operator": "equals"
+                        }
+                    ],
+                    "rulesOperator": "OR",
+                    "disableTemplating": false,
+                    "fallbackTo404": false,
+                    "default": false,
+                    "crudKey": "id",
+                    "callbacks": []
+                }
+            ],
+            "responseMode": null
+        },
+        {
+            "uuid": "d7025956-f5bf-4b6a-9837-78f5394912cb",
+            "type": "http",
+            "documentation": "getMomoCode",
+            "method": "get",
+            "endpoint": "transactionms/v1/momo/token",
+            "responses": [
+                {
+                    "uuid": "831ff8e2-f893-41b2-9d20-f8b179eb8ee1",
+                    "body": "{\n    \"status\": \"OK\",\n    \"code\": 200,\n    \"data\": [\n        \"RF10156\"\n    ],\n    \"message\": \"Query success ful\"\n}",
+                    "latency": 200,
+                    "statusCode": 200,
+                    "label": "",
+                    "headers": [],
+                    "bodyType": "INLINE",
+                    "filePath": "",
+                    "databucketID": "",
+                    "sendFileAsBody": false,
+                    "rules": [],
+                    "rulesOperator": "OR",
+                    "disableTemplating": false,
+                    "fallbackTo404": false,
+                    "default": true,
+                    "crudKey": "id",
+                    "callbacks": []
+                },
+                {
+                    "uuid": "a5f4838a-aae6-4818-b113-f584bed503ad",
+                    "body": "{\n  \"status\": \"UNKNOWN_ERROR\",\n  \"message\": \"Đã có lỗi xảy ra\"\n}",
+                    "latency": 200,
+                    "statusCode": 500,
+                    "label": "",
+                    "headers": [],
+                    "bodyType": "INLINE",
+                    "filePath": "",
+                    "databucketID": "",
+                    "sendFileAsBody": false,
+                    "rules": [
+                        {
+                            "target": "header",
+                            "modifier": "ERROR",
+                            "value": "true",
+                            "invert": false,
+                            "operator": "equals"
+                        }
+                    ],
+                    "rulesOperator": "OR",
+                    "disableTemplating": false,
+                    "fallbackTo404": false,
+                    "default": false,
+                    "crudKey": "id",
+                    "callbacks": []
+                }
+            ],
+            "responseMode": null
+        },
+        {
+            "uuid": "60c70168-a745-4d47-aac9-74f8652cac0c",
+            "type": "http",
+            "documentation": "get crypto list",
+            "method": "get",
+            "endpoint": "transactionms/v1/cryptopay",
+            "responses": [
+                {
+                    "uuid": "dd6dcc5e-4bbd-4964-8e19-27ef5169116c",
+                    "body": "{\n    \"status\": \"OK\",\n    \"code\": 200,\n    \"data\": [],\n    \"message\": \"OK\"\n}",
+                    "latency": 200,
+                    "statusCode": 200,
+                    "label": "",
+                    "headers": [],
+                    "bodyType": "INLINE",
+                    "filePath": "",
+                    "databucketID": "",
+                    "sendFileAsBody": false,
+                    "rules": [],
+                    "rulesOperator": "OR",
+                    "disableTemplating": false,
+                    "fallbackTo404": false,
+                    "default": true,
+                    "crudKey": "id",
+                    "callbacks": []
+                },
+                {
+                    "uuid": "6402c175-8e8e-426b-82df-7cf2af972300",
+                    "body": "{\n  \"status\": \"UNKNOWN_ERROR\",\n  \"message\": \"Đã có lỗi xảy ra\"\n}",
+                    "latency": 200,
+                    "statusCode": 500,
+                    "label": "",
+                    "headers": [],
+                    "bodyType": "INLINE",
+                    "filePath": "",
+                    "databucketID": "",
+                    "sendFileAsBody": false,
+                    "rules": [
+                        {
+                            "target": "header",
+                            "modifier": "ERROR",
+                            "value": "true",
+                            "invert": false,
+                            "operator": "equals"
+                        }
+                    ],
+                    "rulesOperator": "OR",
+                    "disableTemplating": false,
+                    "fallbackTo404": false,
+                    "default": false,
+                    "crudKey": "id",
+                    "callbacks": []
+                }
+            ],
+            "responseMode": null
+        },
+        {
+            "uuid": "774e26cc-aba8-41b5-bea0-8d88de139354",
+            "type": "http",
+            "documentation": "get bank",
+            "method": "get",
+            "endpoint": "transactionms/v1/bank",
+            "responses": [
+                {
+                    "uuid": "26943714-6de1-482e-bdf2-65e24ef8a322",
+                    "body": "{\n    \"status\": \"OK\",\n    \"code\": 200,\n    \"data\": [\n        {\n            \"smartpay_code\": \"vcb\",\n            \"bank_code\": \"VCB\",\n            \"bank_name\": \"Vietcombank\"\n        },\n        {\n            \"smartpay_code\": \"acb\",\n            \"bank_code\": \"ACB\",\n            \"bank_name\": \"ACB\"\n        },\n        {\n            \"smartpay_code\": \"eab\",\n            \"bank_code\": \"DongA\",\n            \"bank_name\": \"DongA\"\n        },\n        {\n            \"smartpay_code\": \"vtb\",\n            \"bank_code\": \"VietinBank\",\n            \"bank_name\": \"VietinBank\"\n        },\n        {\n            \"smartpay_code\": \"bidv\",\n            \"bank_code\": \"BIDV\",\n            \"bank_name\": \"BIDV\"\n        },\n        {\n            \"smartpay_code\": \"sab\",\n            \"bank_code\": \"Sacombank\",\n            \"bank_name\": \"Sacombank\"\n        },\n        {\n            \"smartpay_code\": \"tcb\",\n            \"bank_code\": \"Techcombank\",\n            \"bank_name\": \"Techcombank\"\n        },\n        {\n            \"smartpay_code\": \"exim\",\n            \"bank_code\": \"Eximbank\",\n            \"bank_name\": \"Eximbank\"\n        },\n        {\n            \"smartpay_code\": \"mbb\",\n            \"bank_code\": \"MBbank\",\n            \"bank_name\": \"MBbank\"\n        },\n        {\n            \"smartpay_code\": \"vccb\",\n            \"bank_code\": \"VietCapital\",\n            \"bank_name\": \"VietCapital\"\n        },\n        {\n            \"smartpay_code\": \"vpbank\",\n            \"bank_code\": \"VPbank\",\n            \"bank_name\": \"VPBank\"\n        },\n        {\n            \"smartpay_code\": \"agribank\",\n            \"bank_code\": \"Agribank\",\n            \"bank_name\": \"Agribank\"\n        },\n        {\n            \"smartpay_code\": \"tpbank\",\n            \"bank_code\": \"TPbank\",\n            \"bank_name\": \"TPbank\"\n        },\n        {\n            \"smartpay_code\": \"hdbank\",\n            \"bank_code\": \"HDBank\",\n            \"bank_name\": \"HDBank\"\n        },\n        {\n            \"smartpay_code\": \"shb\",\n            \"bank_code\": \"SHB\",\n            \"bank_name\": \"SHB\"\n        },\n        {\n            \"smartpay_code\": \"pvcb\",\n            \"bank_code\": \"PVcombank\",\n            \"bank_name\": \"PVcombank\"\n        },\n        {\n            \"smartpay_code\": \"vib\",\n            \"bank_code\": \"VIBbank\",\n            \"bank_name\": \"VIBbank\"\n        },\n        {\n            \"smartpay_code\": \"mrtbank\",\n            \"bank_code\": \"Maritimebank\",\n            \"bank_name\": \"Maritimebank\"\n        },\n        {\n            \"smartpay_code\": \"nabank\",\n            \"bank_code\": \"NamABank\",\n            \"bank_name\": \"NamABank\"\n        },\n        {\n            \"smartpay_code\": \"scb\",\n            \"bank_code\": \"SCB\",\n            \"bank_name\": \"Sài Gòn Bank\"\n        },\n        {\n            \"smartpay_code\": \"ocb\",\n            \"bank_code\": \"OCB\",\n            \"bank_name\": \"Phương Đông Bank\"\n        },\n        {\n            \"smartpay_code\": \"bvbank\",\n            \"bank_code\": \"BAOVIETBANK\",\n            \"bank_name\": \"BAOVIETBANK\"\n        },\n        {\n            \"smartpay_code\": \"bacabank\",\n            \"bank_code\": \"BacABank\",\n            \"bank_name\": \"BacABank\"\n        },\n        {\n            \"smartpay_code\": \"lpb\",\n            \"bank_code\": \"LPB\",\n            \"bank_name\": \"Liên Việt Post bank\"\n        },\n        {\n            \"smartpay_code\": \"shbvn\",\n            \"bank_code\": \"SHBVN\",\n            \"bank_name\": \"Shinhanbank\"\n        },\n        {\n            \"smartpay_code\": \"seab\",\n            \"bank_code\": \"SEAB\",\n            \"bank_name\": \"SeaBank\"\n        },\n        {\n            \"smartpay_code\": \"scbl\",\n            \"bank_code\": \"SCBL\",\n            \"bank_name\": \"Standard Chartered Bank\"\n        },\n        {\n            \"smartpay_code\": \"klb\",\n            \"bank_code\": \"KLB\",\n            \"bank_name\": \"Kiên Long\"\n        },\n        {\n            \"smartpay_code\": \"abbank\",\n            \"bank_code\": \"ABbank\",\n            \"bank_name\": \"ABbank\"\n        },\n        {\n            \"smartpay_code\": \"wbb\",\n            \"bank_code\": \"WB\",\n            \"bank_name\": \"Woori bank\"\n        },\n        {\n            \"smartpay_code\": \"ivb\",\n            \"bank_code\": \"IVB\",\n            \"bank_name\": \"NDOVINA\"\n        },\n        {\n            \"smartpay_code\": \"ncb\",\n            \"bank_code\": \"NCB\",\n            \"bank_name\": \"Quốc Dân Bank\"\n        },\n        {\n            \"smartpay_code\": \"vab\",\n            \"bank_code\": \"VAB\",\n            \"bank_name\": \"VIETABANK\"\n        },\n        {\n            \"smartpay_code\": \"pgb\",\n            \"bank_code\": \"PGB\",\n            \"bank_name\": \"PG Bank\"\n        },\n        {\n            \"smartpay_code\": \"vid\",\n            \"bank_code\": \"VID\",\n            \"bank_name\": \"Public Bank\"\n        },\n        {\n            \"smartpay_code\": \"vncb\",\n            \"bank_code\": \"VNCB\",\n            \"bank_name\": \"CBbank\"\n        },\n        {\n            \"smartpay_code\": \"sgb\",\n            \"bank_code\": \"SGB\",\n            \"bank_name\": \"Saigonbank\"\n        },\n        {\n            \"smartpay_code\": \"oceb\",\n            \"bank_code\": \"OCEB\",\n            \"bank_name\": \"Ocean Bank\"\n        }\n    ],\n    \"message\": \"Query Bank successful.\"\n}",
+                    "latency": 200,
+                    "statusCode": 200,
+                    "label": "",
+                    "headers": [],
+                    "bodyType": "INLINE",
+                    "filePath": "",
+                    "databucketID": "",
+                    "sendFileAsBody": false,
+                    "rules": [],
+                    "rulesOperator": "OR",
+                    "disableTemplating": false,
+                    "fallbackTo404": false,
+                    "default": true,
+                    "crudKey": "id",
+                    "callbacks": []
+                },
+                {
+                    "uuid": "9a2a9b7b-baa5-48cb-aae2-5ef23f82f0e4",
+                    "body": "{\n  \"status\": \"UNKNOWN_ERROR\",\n  \"message\": \"Đã có lỗi xảy ra\"\n}",
+                    "latency": 200,
+                    "statusCode": 500,
+                    "label": "",
+                    "headers": [],
+                    "bodyType": "INLINE",
+                    "filePath": "",
+                    "databucketID": "",
+                    "sendFileAsBody": false,
+                    "rules": [
+                        {
+                            "target": "header",
+                            "modifier": "ERROR",
+                            "value": "true",
+                            "invert": false,
+                            "operator": "equals"
+                        }
+                    ],
+                    "rulesOperator": "OR",
+                    "disableTemplating": false,
+                    "fallbackTo404": false,
+                    "default": false,
+                    "crudKey": "id",
+                    "callbacks": []
+                }
+            ],
+            "responseMode": null
+        },
+        {
+            "uuid": "ab6c3bd0-47d0-4205-b341-1aab4aff6c38",
+            "type": "http",
+            "documentation": "get bank account full",
+            "method": "get",
+            "endpoint": "transactionms/v1/bank/accounts",
+            "responses": [
+                {
+                    "uuid": "b58a4cbb-edef-4e9f-9db7-9dcb1fd82caa",
+                    "body": "{\n    \"status\": \"OK\",\n    \"code\": 200,\n    \"data\": [\n        {\n            \"bank_url\": \"https://identity-tcb.techcombank.com.vn/auth/realms/backbase/protocol/openid-connect/auth?client_id=tcb-web-client&redirect_uri=https://onlinebanking.techcombank.com.vn/login&state=93c59e78-b5\",\n            \"code_bank\": \"Techcombank\",\n            \"account_name\": \"Võ Châu Trung\",\n            \"account_no\": \"1384236101\",\n            \"branch_name\": \"CN Đà Nẵng\",\n            \"recharge_limit_current\": \"0.00000000\",\n            \"public_rss\": \"0\",\n            \"is_auto\": 0,\n            \"w_code\": \"BC199117\",\n            \"type\": \"N_\",\n            \"qr_code\": \"https://qr.kt-ipa.com/xyz/dt/img/20240411/ef18ad04bdf23a6cec9270f6c1486358.png\",\n            \"is_third_party\": 0,\n            \"br_code\": \"Apple\",\n            \"uniq_id\": \"I11PFGG53RYHTED\",\n            \"en_n\": \"Harper Ariel\"\n        },\n        {\n            \"bank_url\": \"https://online.acb.com.vn\",\n            \"code_bank\": \"ACB\",\n            \"account_name\": \"Võ Châu Trung\",\n            \"account_no\": \"39525967\",\n            \"branch_name\": \"CN Đà Nẵng\",\n            \"recharge_limit_current\": \"0.00000000\",\n            \"public_rss\": \"0\",\n            \"is_auto\": 0,\n            \"w_code\": \"BC199117\",\n            \"type\": \"N_\",\n            \"qr_code\": \"https://qr.kt-ipa.com/xyz/dt/img/20240411/85179cb30d1e79b8b511167d5c2b1958.png\",\n            \"is_third_party\": 0,\n            \"br_code\": \"Walmart\",\n            \"uniq_id\": \"9ZNQATMGSALBCFD\",\n            \"en_n\": \"Schultz Fernanda\"\n        },\n        {\n            \"bank_url\": \"https://ebank.msb.com.vn/IBSRetail/Request?&dse_sessionId=_9SYWT0lLcF0XpTdj7ezfmh&dse_applicationId=-1&dse_pageId=2&dse_operationName=retailIndexProc&dse_errorPage=error_page.jsp&dse_processorState=initial&dse_nextEventName=start#\",\n            \"code_bank\": \"Maritimebank\",\n            \"account_name\": \"Võ Châu Trung\",\n            \"account_no\": \"06001013855795\",\n            \"branch_name\": \"CN Đà Nẵng\",\n            \"recharge_limit_current\": \"0.00000000\",\n            \"public_rss\": \"0\",\n            \"is_auto\": 0,\n            \"w_code\": \"BC199117\",\n            \"type\": \"N_BC199117\",\n            \"qr_code\": \"https://qr.kt-ipa.com/xyz/dt/img/20240411/4ced2dfe4e812bf49ae5369e2227c639.png\",\n            \"is_third_party\": 0,\n            \"br_code\": \"HonestBee\",\n            \"uniq_id\": \"NUTPHSALYYD6ZAQ\",\n            \"en_n\": \"Knight Roselyn\"\n        },\n        {\n            \"bank_url\": \"https://ebanking.dongabank.com.vn/khcn/home#login:\",\n            \"code_bank\": \"DongA\",\n            \"account_name\": \"Võ Thành Tân\",\n            \"account_no\": \"0111563638\",\n            \"branch_name\": \"\",\n            \"recharge_limit_current\": \"0.00000000\",\n            \"public_rss\": \"1\",\n            \"is_auto\": 0,\n            \"w_code\": \"BC199117\",\n            \"type\": \"N_BC199117\",\n            \"qr_code\": \"https://qr.kt-ipa.com/xyz/dt/img/20240413/e51d34ce769dcd840873c766de46c3e7.png\",\n            \"is_third_party\": 0,\n            \"br_code\": \"AmExpre\",\n            \"uniq_id\": \"KZE6XY5NDZ1YQZ9\",\n            \"en_n\": \"Freeman Aithan\"\n        },\n        {\n            \"code_bank\": \"Gianlan\",\n            \"account_name\": \"CHEAT - BC199117\",\n            \"account_no\": \"CHEAT-BC199117\",\n            \"branch_name\": \"\",\n            \"recharge_limit_current\": \"0.00000000\",\n            \"public_rss\": \"0\",\n            \"is_auto\": 0,\n            \"w_code\": \"BC199117\",\n            \"type\": \"R_,N_\",\n            \"is_third_party\": 0,\n            \"br_code\": \"CHEAT\",\n            \"uniq_id\": \"19WMXWJ4WZ2CRTW\",\n            \"en_n\": \"Bailey Aerith\"\n        },\n        {\n            \"code_bank\": \"ARREAR\",\n            \"account_name\": \"ARREAR-BC199117\",\n            \"account_no\": \"ARREAR-BC199117\",\n            \"branch_name\": \"\",\n            \"recharge_limit_current\": \"0.00000000\",\n            \"public_rss\": \"0\",\n            \"is_auto\": 0,\n            \"w_code\": \"BC199117\",\n            \"type\": \"R_,N_\",\n            \"is_third_party\": 0,\n            \"br_code\": \"ARREAR\",\n            \"uniq_id\": \"N6ZDMFE1LZD5AUI\",\n            \"en_n\": \"Graham Maddox\"\n        },\n        {\n            \"code_bank\": \"allsaints\",\n            \"account_name\": \"BC199117-allsaints\",\n            \"account_no\": \"BC199117-allsaints\",\n            \"branch_name\": \"\",\n            \"recharge_limit_current\": \"0.00000000\",\n            \"public_rss\": \"0\",\n            \"is_auto\": 0,\n            \"w_code\": \"BC199117\",\n            \"type\": \"N_\",\n            \"is_third_party\": 0,\n            \"br_code\": \"allsaints\",\n            \"uniq_id\": \"TWHXGHBHV1RANNE\",\n            \"en_n\": \"Douglas Harlow\"\n        },\n        {\n            \"code_bank\": \"teefury\",\n            \"account_name\": \"BC199117-teefury\",\n            \"account_no\": \"BC199117-teefury\",\n            \"branch_name\": \"\",\n            \"recharge_limit_current\": \"0.00000000\",\n            \"public_rss\": \"0\",\n            \"is_auto\": 0,\n            \"w_code\": \"BC199117\",\n            \"type\": \"N_\",\n            \"is_third_party\": 0,\n            \"br_code\": \"teefury\",\n            \"uniq_id\": \"SA65F6WXLL7VXM5\",\n            \"en_n\": \"West Brielle\"\n        },\n        {\n            \"code_bank\": \"coast\",\n            \"account_name\": \"BC199117-coast\",\n            \"account_no\": \"BC199117-coast\",\n            \"branch_name\": \"\",\n            \"recharge_limit_current\": \"0.00000000\",\n            \"public_rss\": \"0\",\n            \"is_auto\": 0,\n            \"w_code\": \"BC199117\",\n            \"type\": \"N_\",\n            \"is_third_party\": 0,\n            \"br_code\": \"coast\",\n            \"uniq_id\": \"8TQP3IQXAU2UAQ2\",\n            \"en_n\": \"Ross Kabira\"\n        },\n        {\n            \"code_bank\": \"dunelm\",\n            \"account_name\": \"BC199117-dunelm\",\n            \"account_no\": \"BC199117-dunelm\",\n            \"branch_name\": \"\",\n            \"recharge_limit_current\": \"0.00000000\",\n            \"public_rss\": \"0\",\n            \"is_auto\": 0,\n            \"w_code\": \"BC199117\",\n            \"type\": \"N_\",\n            \"is_third_party\": 0,\n            \"br_code\": \"dunelm\",\n            \"uniq_id\": \"VWMYV1EU2DX7K6K\",\n            \"en_n\": \"Graham Afton\"\n        },\n        {\n            \"code_bank\": \"BC199117\",\n            \"account_name\": \"BC199117\",\n            \"account_no\": \"BC199117\",\n            \"branch_name\": \"\",\n            \"recharge_limit_current\": \"0.00000000\",\n            \"public_rss\": \"0\",\n            \"is_auto\": 0,\n            \"w_code\": \"BC199117\",\n            \"type\": \"R_,N_\",\n            \"is_third_party\": 0,\n            \"br_code\": \"BC199117\",\n            \"uniq_id\": \"NUK74KT29XTXX6H\",\n            \"en_n\": \"Johnson Natasha\"\n        },\n        {\n            \"bank_url\": \"https://edigi.eximbank.com.vn\",\n            \"code_bank\": \"Eximbank\",\n            \"account_name\": \"Lê Nguyễn Minh Nhựt\",\n            \"account_no\": \"100180515\",\n            \"branch_name\": \"Bình Dương\",\n            \"recharge_limit_current\": \"0.00000000\",\n            \"public_rss\": \"0\",\n            \"is_auto\": 0,\n            \"w_code\": \"BC199117\",\n            \"type\": \"N_BC199117\",\n            \"qr_code\": \"https://qr.kt-ipa.com/xyz/dt/img/20240508/dbd180d863194fc03ae07a56210efd3f.png\",\n            \"is_third_party\": 0,\n            \"br_code\": \"Etsy\",\n            \"uniq_id\": \"6ABF5TWNJVFZ846\",\n            \"en_n\": \"Higgins April\"\n        },\n        {\n            \"bank_url\": \"https://online.vpbank.com.vn/cb/pages/jsp-ns/login-cons.jsp?request_locale=vi_VN\",\n            \"code_bank\": \"VPbank\",\n            \"account_name\": \"Lê Nguyễn Minh Nhựt\",\n            \"account_no\": \"0337662341\",\n            \"branch_name\": \"Bình Dương\",\n            \"recharge_limit_current\": \"0.00000000\",\n            \"public_rss\": \"0\",\n            \"is_auto\": 0,\n            \"w_code\": \"BC199117\",\n            \"type\": \"N_BC199117\",\n            \"qr_code\": \"https://qr.kt-ipa.com/xyz/dt/img/20240508/e4a8575f17fa099959bd93b48ea9e077.png\",\n            \"is_third_party\": 0,\n            \"br_code\": \"Mediaworld\",\n            \"uniq_id\": \"UQ7HVB1CV7SEQKU\",\n            \"en_n\": \"Fox Ariana\"\n        }\n    ],\n    \"message\": \"Query accounts successful.\"\n}",
+                    "latency": 200,
+                    "statusCode": 200,
+                    "label": "",
+                    "headers": [],
+                    "bodyType": "INLINE",
+                    "filePath": "",
+                    "databucketID": "",
+                    "sendFileAsBody": false,
+                    "rules": [],
+                    "rulesOperator": "OR",
+                    "disableTemplating": false,
+                    "fallbackTo404": false,
+                    "default": true,
+                    "crudKey": "id",
+                    "callbacks": []
+                },
+                {
+                    "uuid": "fd68aaff-f178-4809-9f7d-c2888c1da451",
+                    "body": "{\n  \"status\": \"UNKNOWN_ERROR\",\n  \"message\": \"Đã có lỗi xảy ra\"\n}",
+                    "latency": 200,
+                    "statusCode": 500,
+                    "label": "",
+                    "headers": [],
+                    "bodyType": "INLINE",
+                    "filePath": "",
+                    "databucketID": "",
+                    "sendFileAsBody": false,
+                    "rules": [
+                        {
+                            "target": "header",
+                            "modifier": "ERROR",
+                            "value": "true",
+                            "invert": false,
+                            "operator": "equals"
+                        }
+                    ],
+                    "rulesOperator": "OR",
+                    "disableTemplating": false,
+                    "fallbackTo404": false,
+                    "default": false,
+                    "crudKey": "id",
+                    "callbacks": []
+                }
+            ],
+            "responseMode": null
+        },
+        {
+            "uuid": "f1ba39ba-f7ed-48ca-b709-1c4971d17a3a",
+            "type": "http",
+            "documentation": "transfer balance",
+            "method": "post",
+            "endpoint": "transactionms/v1/invoice/transfer/agent",
+            "responses": [
+                {
+                    "uuid": "e3235828-04a2-4a3b-8173-efc127c53181",
+                    "body": "{\n    \"status\": \"OK\",\n    \"code\": 200,\n    \"data\": [\n        {\n            \"partner_code\": \"System\",\n            \"user_id\": 10156,\n            \"username\": \"andrii1\",\n            \"amount\": 50000,\n            \"type\": \"TRANSFER\",\n            \"wallet_type\": 99,\n            \"action\": \"DEPOSIT\",\n            \"status\": \"PROCESSING\",\n            \"created_by\": \"10156:andrii1:BC199117_WEB\",\n            \"processed\": false,\n            \"device_name\": \"IPHONE\",\n            \"os_name\": \"IOS\",\n            \"browser_name\": \"CHROME\",\n            \"sale_advised\": \"\",\n            \"ip\": \"127.0.0.1\",\n            \"user_type\": 1,\n            \"encode_status\": 1,\n            \"_id\": \"666140633fc5e4b62245e4f8\",\n            \"id\": 11977,\n            \"created_time\": \"2024-06-06T04:51:47.047Z\",\n            \"last_updated_time\": \"2024-06-06T04:51:47.047Z\"\n        }\n    ],\n    \"message\": \"Transfer successful\"\n}",
+                    "latency": 200,
+                    "statusCode": 200,
+                    "label": "",
+                    "headers": [],
+                    "bodyType": "INLINE",
+                    "filePath": "",
+                    "databucketID": "",
+                    "sendFileAsBody": false,
+                    "rules": [],
+                    "rulesOperator": "OR",
+                    "disableTemplating": false,
+                    "fallbackTo404": false,
+                    "default": true,
+                    "crudKey": "id",
+                    "callbacks": []
+                },
+                {
+                    "uuid": "bbf189b0-58d9-4ccd-bb66-6704f95de8f5",
+                    "body": "{\n  \"status\": \"UNKNOWN_ERROR\",\n  \"message\": \"Đã có lỗi xảy ra\"\n}",
+                    "latency": 200,
+                    "statusCode": 500,
+                    "label": "",
+                    "headers": [],
+                    "bodyType": "INLINE",
+                    "filePath": "",
+                    "databucketID": "",
+                    "sendFileAsBody": false,
+                    "rules": [
+                        {
+                            "target": "header",
+                            "modifier": "ERROR",
+                            "value": "true",
+                            "invert": false,
+                            "operator": "equals"
+                        }
+                    ],
+                    "rulesOperator": "OR",
+                    "disableTemplating": false,
+                    "fallbackTo404": false,
+                    "default": false,
+                    "crudKey": "id",
+                    "callbacks": []
+                }
+            ],
+            "responseMode": null
+        },
+        {
+            "uuid": "5251e763-9026-4e34-b912-c9bcab4e9181",
+            "type": "http",
+            "documentation": "add invoice crypto",
+            "method": "post",
+            "endpoint": "transactionms/v1/invoice",
+            "responses": [
+                {
+                    "uuid": "4c2b8c34-20df-49dd-b09c-5882d498f302",
+                    "body": "{\n    \"status\": \"OK\",\n    \"code\": 200,\n    \"data\": [\n        {\n            \"id\": 12512,\n            \"method\": \"cryptopay\",\n            \"action\": \"WITHDRAW\",\n            \"type\": \"PAYMENT\",\n            \"amount\": 90,\n            \"ex_rate\": \"24717.0\",\n            \"currency\": \"BUSD\",\n            \"network\": \"BEP20\",\n            \"wallet_address\": \"0x468a4556C4DdDc76D271C4B24B87CB33Af2d6605\",\n            \"to_bank_no\": \"busdbep20\",\n            \"to_bank_code\": \"busdbep20\",\n            \"to_bank_name\": \"busdbep20\",\n            \"from_bank_name\": \"busdbep20\",\n            \"note\": \"rut tien\"\n        }\n    ],\n    \"message\": \"Invoice created successful\"\n}",
+                    "latency": 200,
+                    "statusCode": 200,
+                    "label": "",
+                    "headers": [],
+                    "bodyType": "INLINE",
+                    "filePath": "",
+                    "databucketID": "",
+                    "sendFileAsBody": false,
+                    "rules": [],
+                    "rulesOperator": "OR",
+                    "disableTemplating": false,
+                    "fallbackTo404": false,
+                    "default": true,
+                    "crudKey": "id",
+                    "callbacks": []
+                },
+                {
+                    "uuid": "d996c1db-e10e-482c-bd7e-d11140702ee7",
+                    "body": "{\n  \"code\": 500,\n  \"status\": \"UNKNOWN_ERROR\",\n  \"message\": \"Đã có lỗi xảy ra\"\n}",
+                    "latency": 200,
+                    "statusCode": 500,
+                    "label": "",
+                    "headers": [],
+                    "bodyType": "INLINE",
+                    "filePath": "",
+                    "databucketID": "",
+                    "sendFileAsBody": false,
+                    "rules": [
+                        {
+                            "target": "header",
+                            "modifier": "ERROR",
+                            "value": "true",
+                            "invert": false,
+                            "operator": "equals"
+                        }
+                    ],
+                    "rulesOperator": "OR",
+                    "disableTemplating": false,
+                    "fallbackTo404": false,
+                    "default": false,
+                    "crudKey": "id",
+                    "callbacks": []
+                },
+                {
+                    "uuid": "bfb6d47b-2a18-45f0-8068-d6df5031c1cb",
+                    "body": "{\n  \"status\": \"ERROR\",\n  \"code\": 314,\n  \"message\": \"Bạn đang có phiếu nạp chờ hệ thống xử lý. Vui lòng chờ trong giây lát.\"\n}",
+                    "latency": 0,
+                    "statusCode": 400,
+                    "label": "TOO_MANY_INVOICE_RUNNING - 314",
+                    "headers": [],
+                    "bodyType": "INLINE",
+                    "filePath": "",
+                    "databucketID": "",
+                    "sendFileAsBody": false,
+                    "rules": [
+                        {
+                            "target": "header",
+                            "modifier": "ERROR",
+                            "value": "314",
+                            "invert": false,
+                            "operator": "equals"
+                        }
+                    ],
+                    "rulesOperator": "OR",
+                    "disableTemplating": false,
+                    "fallbackTo404": false,
+                    "default": false,
+                    "crudKey": "id",
+                    "callbacks": []
+                },
+                {
+                    "uuid": "69db2a24-61ab-4430-9d22-e6e44f9ee016",
+                    "body": "{\n  \"status\": \"ERROR\",\n  \"code\": 8,\n  \"message\": \"Số dư không đủ\"\n}",
+                    "latency": 0,
+                    "statusCode": 400,
+                    "label": "INSUFFICIENT_BALANCE_ERROR - 8",
+                    "headers": [],
+                    "bodyType": "INLINE",
+                    "filePath": "",
+                    "databucketID": "",
+                    "sendFileAsBody": false,
+                    "rules": [
+                        {
+                            "target": "header",
+                            "modifier": "ERROR",
+                            "value": "8",
+                            "invert": false,
+                            "operator": "equals"
+                        }
+                    ],
+                    "rulesOperator": "OR",
+                    "disableTemplating": false,
+                    "fallbackTo404": false,
+                    "default": false,
+                    "crudKey": "id",
+                    "callbacks": []
+                },
+                {
+                    "uuid": "4ca80f57-d657-4d33-8146-29cbe5346731",
+                    "body": "{\n  \"status\": \"ERROR\",\n  \"code\": 102,\n  \"message\": \"Giá đã thay đổi, vui lòng thử lại\"\n}",
+                    "latency": 0,
+                    "statusCode": 400,
+                    "label": "CRYPTO_EXCHANGE_RATE_CHANGED - 102",
+                    "headers": [],
+                    "bodyType": "INLINE",
+                    "filePath": "",
+                    "databucketID": "",
+                    "sendFileAsBody": false,
+                    "rules": [
+                        {
+                            "target": "header",
+                            "modifier": "ERROR",
+                            "value": "102",
+                            "invert": false,
+                            "operator": "equals"
+                        }
+                    ],
+                    "rulesOperator": "OR",
+                    "disableTemplating": false,
+                    "fallbackTo404": false,
+                    "default": false,
+                    "crudKey": "id",
+                    "callbacks": []
+                },
+                {
+                    "uuid": "f0194eed-ee06-43c6-9d4b-0fbe0c2b0c00",
+                    "body": "{\n  \"status\": \"ERROR\",\n  \"code\": 353,\n  \"message\": \"Thành viên đang sử dụng khuyến mãi, chưa đủ điều kiện rút tiền!\"\n}",
+                    "latency": 0,
+                    "statusCode": 400,
+                    "label": "WITHDRAW_USER_IN_PROMOTION_ERROR - 353",
+                    "headers": [],
+                    "bodyType": "INLINE",
+                    "filePath": "",
+                    "databucketID": "",
+                    "sendFileAsBody": false,
+                    "rules": [
+                        {
+                            "target": "header",
+                            "modifier": "ERROR",
+                            "value": "353",
+                            "invert": false,
+                            "operator": "equals"
+                        }
+                    ],
+                    "rulesOperator": "OR",
+                    "disableTemplating": false,
+                    "fallbackTo404": false,
+                    "default": false,
+                    "crudKey": "id",
+                    "callbacks": []
+                },
+                {
+                    "uuid": "ef8a307d-d7e1-4ba4-885c-559895dcfd8a",
+                    "body": "{\n  \"status\": \"ERROR\",\n  \"code\": 323,\n  \"message\": \"Số tiền rút không hợp lệ\"\n}",
+                    "latency": 0,
+                    "statusCode": 400,
+                    "label": "INVALID_WITHDRAW_AMOUNT - 323",
+                    "headers": [],
+                    "bodyType": "INLINE",
+                    "filePath": "",
+                    "databucketID": "",
+                    "sendFileAsBody": false,
+                    "rules": [
+                        {
+                            "target": "header",
+                            "modifier": "ERROR",
+                            "value": "323",
+                            "invert": false,
+                            "operator": "equals"
+                        }
+                    ],
+                    "rulesOperator": "OR",
+                    "disableTemplating": false,
+                    "fallbackTo404": false,
+                    "default": false,
+                    "crudKey": "id",
+                    "callbacks": []
+                }
+            ],
+            "responseMode": null
         }
     ],
     "rootChildren": [
         {
-            "type": "route",
-            "uuid": "dfd240a1-8828-4655-9876-e18ca742769a"
+            "type": "folder",
+            "uuid": "de41bae5-e452-4d8c-963b-b866061ad8b0"
         }
     ],
     "proxyMode": false,
